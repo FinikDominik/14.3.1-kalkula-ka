@@ -1,6 +1,10 @@
 let operacie = JSON.parse(localStorage.getItem("operacie"));
-let operreverse = operacie.reverse();
 let Divcont = document.getElementById('container');
+let operreverse = [];
+
+if(operacie !== null || "" ){
+    let operreverse = operacie.reverse();
+}
         
 if(operacie == null || "" ) {
         operacie = [];
