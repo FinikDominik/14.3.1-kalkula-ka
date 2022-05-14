@@ -1,19 +1,16 @@
 let operacie = JSON.parse(localStorage.getItem("operacie"));
 let Divcont = document.getElementById('container');
-let operreverse = [];
 
-if(operacie !== null || "" ){
-    let operreverse = operacie.reverse();
-}
         
 if(operacie == null || "" ) {
         operacie = [];
 }
 
-for(let i = 0; i < operreverse.length; i++) {
-    Divcont.innerHTML += "<p>" + operreverse[i] + "</p>";
+for(let i = 0; i < operacie.length; i++) {
+    let par = document.createElement('p');
+    par.appendChild(document.createTextNode(operacie[i]));
+    Divcont.prepend(par);
 }
-
 
 let btnResult = document.getElementById('btnResult');
     btnResult.onclick = function(event){
@@ -56,7 +53,7 @@ let btnResult = document.getElementById('btnResult');
                 break;
         }
 
-        if(operacie.length > 4) {
+        if(operacie.length > 5) {
             operacie.splice(0, 1);
         }
 
